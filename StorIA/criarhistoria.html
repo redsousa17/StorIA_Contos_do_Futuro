@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="utf-8" />
+        <meta pergunta="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta pergunta="description" content="" />
+        <meta pergunta="author" content="" />
+        <title>Criador de Histórias</title>
+        <!-- Favicon-->
+        <link rel="icon" type="image/x-icon" href="img/livro.webp" />
+        <!-- Custom Google font-->
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@100;200;300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet" />
+        <!-- Bootstrap icons-->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css" rel="stylesheet" />
+        <!-- Core theme CSS (includes Bootstrap) -->
+        <link href="css/styles.css" rel="stylesheet" />
+
+    </head>
+    <body class="d-flex flex-column h-100 bg-light">
+        <main class="flex-shrink-0">
+            <!-- Navbar-->
+            <nav class="navbar navbar-expand-lg navbar-light bg-white py-3">
+                <div class="container px-5">
+                    <a class="navbar-brand" href="index.html"><span class="fw-bolder text-primary">StorIA</span></a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav ms-auto mb-2 mb-lg-0 small fw-bolder">
+                            <li class="nav-item"><a class="nav-link" href="index.html">Inicio</a></li>
+                            <li class="nav-item"><a class="nav-link" href="criarhistoria.html">Criar História</a></li>
+                            <li class="nav-item"><a class="nav-link" href="biblioteca.html">Biblioteca</a></li>
+                            <li class="nav-item"><a class="nav-link" href="contato.html">Contato</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+            <!-- Conteudo da Pagina -->
+            <div class="container px-5 my-5">
+                <div class="row gx-5 justify-content-center">
+                    <!--Criação da Historia-->
+                    <section>
+                        <div class="text-center card shadow border-0 rounded-4 mb-5">
+                            <div class="card-body p-5"> 
+                                <div class="d-flex align-items-center mb-4">
+                                    <div class="feature bg-primary bg-gradient-primary-to-secondary text-white rounded-3 me-3"><i class="bi bi-pen"></i></div>
+                                    <h1 class="display-5 fw-bolder mb-3"><span class="text-gradient d-inline">Crie sua História</span></h1>
+                                </div> 
+                                <div class="d-flex align-items-center justify-content-between mb-1">
+                                    <h4 class="fw-bolder mb-0">Minha História terá: </h4>
+                                </div>
+                                <div class="form-floating mb-3">
+                                    <input class="form-control" id="pergunta" type="text" placeholder="Digite aqui sua Historia..." data-sb-validations="required" />
+                                    <label for="pergunta"> Informe um conjunto de palavras para criar sua História unica </label>
+                                    
+                                    <div class="invalid-feedback" data-sb-feedback="pergunta:required">Por Favor digite sobre o que é sua Historia</div>
+                                </div>
+                                <div class="container px-5 my-5">
+                                    <div class="text-center">
+                                        <a id = "btnGerar" type='submit' class="btn btn-success btn-lg px-5 py-3 fs-6 fw-bolder" onclick="SendQuestion()">Gerar História Nova</a>
+                                        <a id = "btnVer" type='submit' class="btn btn-dark btn-lg px-5 py-3 fs-6 fw-bolder" onclick="ViewHist()">Ver Historia Aleatoria</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Caixa Onde sera Exibida a Historia Gerada -->
+                        <div id = 'caixahistoria' class="card overflow-hidden shadow rounded-4 border-0 mb-5" style="display: none;">
+                            <div class="card-body p-0">
+                                <div class="d-flex align-items-center">
+                                    <div class="p-5">
+                                        <p id="resposta">Carregando . . .</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <hr style="  border: 0; height: 2px; background-image: linear-gradient(to right, transparent, #CCC, transparent); ">
+                        </div>
+                    </section>
+                    <!-- Importancia de Ler e Ouvir Historias -->
+                    <section>
+                        <div class="card shadow border-0 rounded-4 mb-5">
+                            <div class="card-body p-5">
+                                <div class="mb-5">
+                                    <div class="d-flex align-items-center mb-4">
+                                        <div class="feature bg-primary bg-gradient-primary-to-secondary text-white rounded-3 me-3"><i class="bi bi-book"></i></div>
+                                        <h3 class="fw-bolder mb-0"><span class="text-gradient d-inline">A importância de ler e ouvir histórias</span></h3>
+                                    </div>
+                                    <div class="row row-cols-1 row-cols-md-2 mb-3">
+                                        <div class="col mb-4 mb-md-0"><div class="d-flex align-items-center bg-light rounded-4 p-3 h-100"><li>Desenvolvimento da Linguagem.</li></div></div>
+                                        <div class="col mb-4 mb-md-0"><div class="d-flex align-items-center bg-light rounded-4 p-3 h-100"><li>Habilidades Cognitivas.</li></div></div>
+                                        <div class="col mb-4 mb-md-0"><div class="d-flex align-items-center bg-light rounded-4 p-3 h-100"><li>Desenvolvimento Social e Emocional.</li></div></div>
+                                        <div class="col mb-4 mb-md-0"><div class="d-flex align-items-center bg-light rounded-4 p-3 h-100"><li>Conhecimento do Mundo.</li></div></div>
+                                        <div class="col mb-4 mb-md-0"><div class="d-flex align-items-center bg-light rounded-4 p-3 h-100"><li>Estímulo à Leitura Independente.</li></div></div>
+                                        <div class="col mb-4 mb-md-0"><div class="d-flex align-items-center bg-light rounded-4 p-3 h-100"><li>Desenvolvimento da Concentração.</li></div></div>
+                                        <div class="col mb-4 mb-md-0"><div class="d-flex align-items-center bg-light rounded-4 p-3 h-100"><li>Desenvolvimento Moral e Ético.</li></div></div>
+                                        <div class="col mb-4 mb-md-0"><div class="d-flex align-items-center bg-light rounded-4 p-3 h-100"><li>Estabelecer Rotinas Positivas.</li></div></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    <!-- A Importância das histórias infantis -->
+                    <section>
+                        <div class="card shadow border-0 rounded-4 mb-5">
+                            <div class="card-body p-5">
+                                <div class="d-flex align-items-center mb-4">
+                                    <div class="feature bg-primary bg-gradient-primary-to-secondary text-white rounded-3 me-3"><i class="bi bi-magic"></i></div>
+                                    <h3 class="fw-bolder mb-0"><span class="text-gradient d-inline">A Importância das histórias infantis</span></h3>
+                                </div>
+                                <div class="row align-items-center gx-5">
+                                    <p>
+                                        A contação de histórias é um instrumento muito importante no estímulo à leitura, ao desenvolvimento da linguagem, é um passaporte para a escrita, desperta o senso crítico e principalmente faz a criança sonhar. E os contadores de histórias são os mediadores desse processo, tendo uma tarefa muito importante que é de envolver a criança na história, dando vida aos sonhos, o despertar das emoções, transportando para o mundo da fantasia.
+                                        <br>
+                                        <br>
+                                        O ato de contar histórias instrui, socializa e diverte as crianças. É uma ferramenta que desperta o interesse pela leitura, ajuda no desenvolvimento psicológico e moral, auxiliando na manutenção da saúde mental das crianças em fase de desenvolvimento, amplia o vocabulário e o mundo de ideias, desenvolvendo a linguagem e o pensamento, trabalha a atenção, a memoria e a reflexão, desperta a sensibilidade, a descoberta da identidade, adapta as crianças ao meio ambiente, assim como desenvolve funções cognitivas para o pensamento como comparação, raciocínio lógico, pensamento hipotético e convergente e divergente. A organização geral dos enredos possui um conteúdo moral que colabora para a formação ética e cidadã das crianças.
+                                        <br>
+                                        <br>
+                                        Além disso, a história permite o contato das crianças com o uso real da escrita, levando-as a conhecerem novas palavras, a discutirem valores como o amor, família, moral e trabalho, e a usarem a imaginação, desenvolver a oralidade, a criatividade e o pensamento crítico, auxiliam na construção de identidade do educando, seja esta pessoal ou cultural, melhoram seus relacionamentos afetivos interpessoais e abrem espaço para novas  aprendizagens nas diversas disciplinas escolares, pelo caráter motivador da criança.
+                                        <br>
+                                        <br>
+                                        <a target="_blank" href="http://docs.uninove.br/arte/fac/publicacoes/pdf/v6-2016/artigo-ana-lucia-sanches.pdf" class="nav-link small text-muted"> <i>Clique aqui para ler o artigo completo...</i></a>
+                                    </p>
+                    
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Citação 1 -->
+                        <div class="card shadow border-0 rounded-4 mb-5">
+                            <div class="card-body p-5">
+                                <div class="row align-items-center gx-5">
+                                    <div class="col text-center text-lg-start mb-4 mb-lg-0">
+                                        <div class="bg-light p-4 rounded-4">
+                                            <div class="text-primary fw-bolder mb-2">ABRAMOVICH</div>
+                                            <div class="small fw-bolder">1997</div>
+                                            <div class="small text-muted">p.17</div>
+                                            <div class="small text-muted">(adaptado)</div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-8"><div>"Ler histórias para crianças, sempre, sempre... É poder sorrir, rir, gargalhar com as situações vividas pelos personagens, com a ideia do conto ou com jeito de escrever do autor e, então, poder ser um pouco cúmplice desse momento de humor, de brincadeira, de divertimento... É através da história que se pode descobrir outros lugares, outros tempos, outros jeitos de agir e de ser, outra ética, outra ótica... É aprender História, Geografia, Filosofia,Política, Sociologia, sem precisar saber o nome disso tudo e muito menos achar que tem cara de aula... Porque se tiver, deixa de ser literatura, deixa de ser prazer e passa a ser Didática, que é outro departamento (não tão preocupado em abrir as portas da compreensão do mundo)."</div></div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Citação 2 -->
+                        <div class="card shadow border-0 rounded-4 mb-5">
+                            <div class="card-body p-5">
+                                <div class="row align-items-center gx-5">
+                                    <div class="col-lg-8"><div>"Ler não é decifrar, como num jogo de adivinhações, o sentido de um texto. É a partir do texto, ser capaz de atribuir-lhe significado, conseguir relacioná-lo a todos os outros textos significativos para cada um, reconhecer nele o tipo de  leitura que seu autor pretendia e, dono da própria vontade, entregar-se a esta leitura ou rebelar-se contra ela, propondo outra."</div></div>
+                                    <div class="col text-center text-lg-start mb-4 mb-lg-0">
+                                        <div class="bg-light p-4 rounded-4">
+                                            <div class="text-secondary fw-bolder mb-2">LAJOLO</div>
+                                            <div class="mb-2">
+                                                <div class="small fw-bolder">1987</div>
+                                                <div class="small text-muted">p.91</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </main>
+        <!-- Footer -->
+        <footer class="bg-white py-4 mt-auto">
+            <div class="container px-5">
+                <div class="row align-items-center justify-content-between flex-column flex-sm-row">
+                    <div class="col-auto"><div class="small m-0">Copyright &copy; StorIA 2023</div></div>
+                    <div class="col-auto">
+                        <span class="mx-1">&middot;</span>
+                        <a class="text-gradient" href="https://www.linkedin.com/in/rodrigoesousa/" target="_blank"><i class="bi bi-linkedin"></i></a>
+                        <span class="mx-1">&middot;</span>
+                        <a class="text-gradient" href="contato.html"><i class="bi bi-envelope"></i></a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!-- Bootstrap JS -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- JS -->
+        <script src="js/scripts.js"></script>
+    </body>
+</html>
